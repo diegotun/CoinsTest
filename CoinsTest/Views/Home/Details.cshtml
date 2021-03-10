@@ -1,0 +1,27 @@
+﻿@model HomeDetailsViewModel
+
+@{
+    ViewBag.Title = "Coin Details";
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.coinDetails.name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top" src="@Model.coinDetails.image.large" />
+                <h4><a href="@Model.coinDetails.links.homepage.First()">Visit Homepage</a></h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="home" asp-action="index" class="btn btn-primary">Back</a>
+                <a asp-controller="home" asp-action="downloadDetails" class="btn btn-info m-1">Download CSV</a>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/CustomScript.js"></script>
+}
